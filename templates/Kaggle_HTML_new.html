@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Employee Joining - Kaggle</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="city" placeholder="City" required="required" />
+        <input type="text" name="gender" placeholder="Gender" required="required" />
+        <input type="text" name="enrolled_university" placeholder="University" required="required" />
+        <input type="text" name="education_level" placeholder="Education Level" required="required" />
+        <input type="text" name="major_discipline" placeholder="Major Discipline" required="required" />
+        <input type="text" name="experience" placeholder="Experience" required="required" />
+        <input type="text" name="company_size" placeholder="Company Size" required="required" />
+        <input type="text" name="company_type" placeholder="Company Type" required="required" />
+        <input type="text" name="last_new_job" placeholder="Last Job" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
