@@ -1,1 +1,1 @@
-web: gunicorn Kaggle_Flask.py:app
+web:gunicorn Kaggle_Flask.py:app
